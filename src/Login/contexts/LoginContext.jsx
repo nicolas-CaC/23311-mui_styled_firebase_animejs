@@ -35,6 +35,18 @@ export const LoginProvider = ({ children }) => {
 
         if (!user) return
 
+        const { displayName, isAnonymous, photoURL, email, uid } = await user
+
+        uid && !isAnonymous && setStatus({
+            ...status,
+            logged: true,
+            setUser: {
+                nombre: displayName,
+                img: photoURL,
+                email,
+                uid
+            }
+        })
     }
 
     return (
