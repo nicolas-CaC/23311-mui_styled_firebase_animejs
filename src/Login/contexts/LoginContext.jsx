@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 
 const initialState = {
-    logged: false,
+    logged: true,
     user: undefined,
     waiting: false,
     register: false

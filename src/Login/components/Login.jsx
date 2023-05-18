@@ -1,8 +1,7 @@
 import { useContext, useState } from "react"
-import { StyledButton, StyledForm, StyledInput, StyledTitle } from "../styles/LoginStyles"
 import { emailSignin, emailSignup, signInWithGoogle } from "../../Global/firebase/providers/providers.js"
 import { LoginContext } from "../contexts/LoginContext"
-import { loginData } from "../data/loginData"
+import { Sign } from "./Sign"
 
 
 export const Login = () => {
@@ -57,59 +56,3 @@ export const Login = () => {
 
 
 
-const Sign = ({
-    register,
-    eventOnChange,
-    eventOnClick,
-    changeStatus,
-    googleSignin,
-    waiting }) =>
-
-    <StyledForm register={ register }>
-        <StyledTitle>{
-            register
-                ? loginData.register.title
-                : loginData.login.title }
-        </StyledTitle>
-
-        <StyledInput
-            name="name"
-            type="text"
-            placeholder={ register
-                ? loginData.register.inputUser
-                : loginData.login.inputUser }
-            onChange={ eventOnChange }
-        />
-        <StyledInput
-            name="pass"
-            type="password"
-            placeholder={ register
-                ? loginData.register.inputPass
-                : loginData.login.inputPass }
-            onChange={ eventOnChange }
-        />
-
-        <StyledButton
-            disabled={ waiting }
-            onClick={ eventOnClick }>
-            { register
-                ? loginData.register.button
-                : loginData.login.button }
-        </StyledButton>
-
-        <StyledButton
-            changeButton
-            disabled={ waiting }
-            onClick={ changeStatus }>
-            { register
-                ? loginData.register.changeStatus
-                : loginData.login.changeStatus }
-        </StyledButton>
-
-        <StyledButton
-            google
-            disabled={ waiting }
-            onClick={ googleSignin }>
-            Loguearme con cuenta Google
-        </StyledButton>
-    </StyledForm>
