@@ -2,6 +2,7 @@ import { Box, CircularProgress, Grid, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
 import AlertDialog from "../../../Global/components/AlertDialog"
 import { useFetch } from "../../../Global/hooks/useFetch"
+import { CartWidget } from "../../../Cart/components/CartWidget"
 
 const url = (id) => `https://fakestoreapi.com/products/${id}`
 
@@ -102,6 +103,7 @@ const Card = ({ data }) => {
                         <Typography variant="h5">
                             ${ price }
                         </Typography>
+                        <CartWidget data={ data } />
                     </Grid>
                 </Grid>
             </Grid>
