@@ -67,7 +67,6 @@ const list = (toggleDrawer) => (
                         <Link
                             to={ section.link }
                             style={ { textDecoration: 'none' } }>
-                            {/* NO PUSE EL TAG CIERRE DE LINK o_O */ }
                             <ListItemText primary={ section.name } />
                         </Link>
                     </ListItemButton>

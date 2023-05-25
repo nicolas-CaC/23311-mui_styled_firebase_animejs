@@ -3,6 +3,7 @@ import { Box, ImageList, ImageListItem, ImageListItemBar, Skeleton } from "@mui/
 import { Link } from "react-router-dom"
 
 const url = 'https://fakestoreapi.com/products'
+// const ruta = '/src/assets/data/products.json'
 
 const card = {
     width: '210px',

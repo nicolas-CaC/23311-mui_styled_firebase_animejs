@@ -5,6 +5,7 @@ import { MainLayout } from '../Global/layouts/MainLayout'
 import { Router } from '../Router/router'
 import { CartProvider } from '../Cart/contexts/CartContext'
 
+
 export const App = () =>
   <BrowserRouter>
     <CartProvider>
