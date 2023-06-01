@@ -1,3 +1,4 @@
+import anime from "animejs"
 
 
 const errorDOM = (item, booleano) => {

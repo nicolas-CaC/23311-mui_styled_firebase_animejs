@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { checkForm } from "../utilities/checkForm";
+import { setErrorDOM } from "../utilities/setErrorDOM";
 
 const initialState = {
     name: '',
@@ -12,7 +14,10 @@ export const useForm = (refs) => {
 
     const submitHandleClick = (e) => {
         e.preventDefault();
-        console.log('Valores finales:', form);
+        const result = checkForm(form)
+        setErrorDOM(result, refs)
+        // result.error && 
+        // fetch('/api/contacto')
     }
 
     const inputHandleChange = (e) => {

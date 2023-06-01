@@ -1,11 +1,18 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
+import { saveToStorage, updateFromStorage } from '../../Global/utilities/storage';
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
-    const [cart, setCart] = useState([])
-    const [total, setTotal] = useState(0)
+    const initialState = updateFromStorage('cart', 'qty')
+
+    const [cart, setCart] = useState(initialState.cart)
+    const [total, setTotal] = useState(initialState.total)
+
+    useEffect(() => {
+        saveToStorage('cart', cart)
+    }, [cart])
 
     const newItem = (data, qty) => {
         data.qty = qty
